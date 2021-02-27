@@ -1,64 +1,58 @@
 package com.ils.ilsacademy;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link MediaFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.ils.ilsacademy.RecycleViewFragment.MediaFragmentAdapter;
+import com.ils.ilsacademy.models.MediaDatamodel;
+
+import java.util.ArrayList;
+
+
 public class MediaFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private RecyclerView recyclerView2;
+    private MediaFragmentAdapter mediaFragmentAdapter;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public MediaFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment MediaFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static MediaFragment newInstance(String param1, String param2) {
-        MediaFragment fragment = new MediaFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_media, container, false);
+        View view = inflater.inflate(R.layout.fragment_media, container, false);
+
+        recyclerView2 = view.findViewById(R.id.recycleView2);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        recyclerView2.setLayoutManager(linearLayoutManager);
+        media();
+
+        return view;
+
+
+    }
+
+    private void media() {
+        ArrayList<MediaDatamodel> dataList = new ArrayList();
+
+        dataList.add(new MediaDatamodel("title", "description", "link"));
+
+
+        dataList.add(new MediaDatamodel("holiday", "hello student tomorrow holiday in college due to online exam", "Link"));
+
+        dataList.add(new MediaDatamodel("assignment", "student submit your assignment and collect your result", "Link"));
+
+
+        dataList.add(new MediaDatamodel("leacture", "today's leacture over", "Link"));
+
+
+        mediaFragmentAdapter = new MediaFragmentAdapter(getContext(), dataList);
+        recyclerView2.setAdapter(mediaFragmentAdapter);
+
     }
 }

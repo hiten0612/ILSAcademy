@@ -21,6 +21,7 @@ public class Login extends AppCompatActivity {
     private Button login;
     private TextView click;
     private TextInputLayout tilUserName, tilPassword;
+    private SharedPreferenceConfig sharedPreferenceConfig;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +34,7 @@ public class Login extends AppCompatActivity {
         click = findViewById(R.id.click);
         tilUserName = findViewById(R.id.tilUserName);
         tilPassword = findViewById(R.id.tilPassword);
+        sharedPreferenceConfig = new SharedPreferenceConfig(getApplicationContext());
 
         user.addTextChangedListener(new TextWatcher() {
             @Override
@@ -56,32 +58,33 @@ public class Login extends AppCompatActivity {
             }
         });
 
-            pass.addTextChangedListener(new TextWatcher() {
-                @Override
-                public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+        pass.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if (charSequence.toString().isEmpty()) {
+                    tilPassword.setError("please enter password");
+                    return;
+                } else {
+                    tilPassword.setError("");
                 }
 
-                @Override
-                public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                    if (charSequence.toString().isEmpty()) {
-                        tilPassword.setError("please enter password");
-                        return;
-                    } else {
-                        tilPassword.setError("");
-                    }
 
+            }
 
-                }
+            @Override
+            public void afterTextChanged(Editable editable) {
 
-                @Override
-                public void afterTextChanged(Editable editable) {
-
-                }
-            });
+            }
+        });
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 validate(user.getText().toString(), pass.getText().toString());
             }
 
@@ -96,6 +99,7 @@ public class Login extends AppCompatActivity {
             }
         });
     }
+
 
     private void validate(String username, String password) {
         if (username.isEmpty()) {
@@ -113,8 +117,10 @@ public class Login extends AppCompatActivity {
         }
 
         if (username.equals("Admin") && password.equals("12345")) {
-            Intent act = new Intent(Login.this, DeshBoard.class);
-            startActivity(act);
+            Intent intent = new Intent(this, DeshBoard.class);
+            startActivity(intent);
+            sharedPreferenceConfig.setLoginStatus(true);
+            finish();
         } else {
             Toast.makeText(Login.this, "incorret usename or password", Toast.LENGTH_SHORT).show();
         }

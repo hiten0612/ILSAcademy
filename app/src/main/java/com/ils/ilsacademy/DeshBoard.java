@@ -39,7 +39,7 @@ public class DeshBoard extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(false);
         getSupportActionBar().setTitle("");
-     //   getSupportActionBar().setLogo(R.drawable.logo);
+        //   getSupportActionBar().setLogo(R.drawable.logo);
 
         viewPager = findViewById(R.id.viewpager);
         setupViewPager(viewPager);
@@ -52,7 +52,7 @@ public class DeshBoard extends AppCompatActivity {
         etNotice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent not = new Intent(DeshBoard.this,NoticeActivity.class);
+                Intent not = new Intent(DeshBoard.this, NoticeActivity.class);
                 startActivity(not);
             }
         });
@@ -61,7 +61,7 @@ public class DeshBoard extends AppCompatActivity {
         etMedia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent med = new Intent(DeshBoard.this,MediaActivity.class);
+                Intent med = new Intent(DeshBoard.this, MediaActivity.class);
                 startActivity(med);
             }
         });
@@ -72,7 +72,7 @@ public class DeshBoard extends AppCompatActivity {
         etLive.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent liv = new Intent(DeshBoard.this,LiveActivity.class);
+                Intent liv = new Intent(DeshBoard.this, LiveActivity.class);
                 startActivity(liv);
             }
         });
@@ -81,7 +81,7 @@ public class DeshBoard extends AppCompatActivity {
         etScreen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent scr = new Intent(DeshBoard.this,ProfileScreen.class);
+                Intent scr = new Intent(DeshBoard.this, ProfileScreen.class);
                 startActivity(scr);
             }
         });
