@@ -23,6 +23,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="monospace"
         android:text="ILS Academy"
+        android:textColor="@color/red"
         android:textSize="30dp"
         app:fontFamily="@font/creepster"
         app:layout_constraintEnd_toEndOf="parent"

@@ -86,8 +86,8 @@
             android:layout_height="wrap_content"
             app:fab_colorNormal="@color/red"
             app:fab_icon="@drawable/floating_button"
-            app:fab_title="Notice"
-            app:fab_size="mini"/>
+            app:fab_size="mini"
+            app:fab_title="Notice" />
 
         <com.getbase.floatingactionbutton.FloatingActionButton
             android:id="@+id/etMedia"
@@ -95,8 +95,8 @@
             android:layout_height="wrap_content"
             app:fab_colorNormal="@color/red"
             app:fab_icon="@drawable/floating_button"
-            app:fab_title="Media"
-            app:fab_size="mini"/>
+            app:fab_size="mini"
+            app:fab_title="Media" />
 
         <com.getbase.floatingactionbutton.FloatingActionButton
             android:id="@+id/etLive"
@@ -104,8 +104,8 @@
             android:layout_height="wrap_content"
             app:fab_colorNormal="@color/red"
             app:fab_icon="@drawable/floating_button"
-            app:fab_title="Live"
-            app:fab_size="mini"/>
+            app:fab_size="mini"
+            app:fab_title="Live" />
 
 
     </com.getbase.floatingactionbutton.FloatingActionsMenu>
