@@ -36,20 +36,11 @@ public class NoticeFragment extends Fragment {
 
     private void initData() {
 
-        ArrayList<NoticeDataModel> noticelist =  new ArrayList<>();
-
-
-        noticelist.add(new NoticeDataModel("title","description"));
-       
-
-        noticelist.add(new NoticeDataModel("holiday","hello student tomorrow holiday in college due to online exam"));
-
-
-        noticelist.add(new NoticeDataModel("asssignment","student submit your assignment and collect your result"));
-
-
-         noticelist.add(new NoticeDataModel("leacture","today's leacture over "));
-
+        ArrayList<NoticeDataModel> noticelist = new ArrayList<>();
+        noticelist.add(new NoticeDataModel("Title", "description"));
+        noticelist.add(new NoticeDataModel("Holiday", "hello student tomorrow holiday in college due to online exam"));
+        noticelist.add(new NoticeDataModel("Assignments", "student submit your assignment and collect your result"));
+        noticelist.add(new NoticeDataModel("Lecture", "today's leacture over "));
 
         noticeFragmentAdapter = new NoticeFragmentAdapter(getContext(), noticelist);
         recyclerView.setAdapter(noticeFragmentAdapter);

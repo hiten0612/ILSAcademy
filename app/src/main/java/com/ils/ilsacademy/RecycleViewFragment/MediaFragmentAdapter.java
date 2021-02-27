@@ -40,9 +40,9 @@ public class MediaFragmentAdapter extends RecyclerView.Adapter<MediaFragmentAdap
     public void onBindViewHolder(@NonNull MediaFragmentAdapter.ViewHolder holder, int position) {
 
         MediaDatamodel mediaDatamodel = mediaDatamodelArrayList.get(position);
-        holder.lvTitle.setText(mediaDatamodel.getTitle());
-        holder.lvdes.setText(mediaDatamodel.getDes());
-        holder.lvlink.setText(mediaDatamodel.getLink());
+//        holder.lvTitle.setText(mediaDatamodel.getTitle());
+//        holder.lvdes.setText(mediaDatamodel.getDes());
+//        holder.lvlink.setText(mediaDatamodel.getLink());
 
     }
 
@@ -59,9 +59,9 @@ public class MediaFragmentAdapter extends RecyclerView.Adapter<MediaFragmentAdap
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            lvTitle = itemView.findViewById(R.id.lvTitle);
-            lvdes = itemView.findViewById(R.id.lvdes);
-            lvlink = itemView.findViewById(R.id.lvlink);
+//            lvTitle = itemView.findViewById(R.id.lvTitle);
+//            lvdes = itemView.findViewById(R.id.lvdes);
+//            lvlink = itemView.findViewById(R.id.lvlink);
         }
     }
 

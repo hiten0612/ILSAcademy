@@ -18,9 +18,8 @@ public class NoticeFragmentAdapter extends RecyclerView.Adapter<NoticeFragmentAd
 
 
     private static final String TAG = "com.ils.ilsacademy.RecycleViewFragment.NoticeFragmentAdapter";
-    private ArrayList<NoticeDataModel> noticeDataModelArrayList = new ArrayList<>();
-
     private final Context mContext;
+    private ArrayList<NoticeDataModel> noticeDataModelArrayList = new ArrayList<>();
 
 
     public NoticeFragmentAdapter(Context context, ArrayList<NoticeDataModel> mnoticeDataModelArrayList) {
@@ -44,7 +43,7 @@ public class NoticeFragmentAdapter extends RecyclerView.Adapter<NoticeFragmentAd
 
         NoticeDataModel noticeDataModel = noticeDataModelArrayList.get(position);
         holder.title.setText(noticeDataModel.getTitle());
-        holder.des.setText(noticeDataModel.getDescription());
+//        holder.des.setText(noticeDataModel.getDescription());
 
     }
 

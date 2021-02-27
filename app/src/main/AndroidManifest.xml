@@ -9,14 +9,30 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ILSAcademy">
-        <activity android:name=".ProfileScreen" />
-        <activity android:name=".LiveActivity" />
-        <activity android:name=".MediaActivity" />
-        <activity android:name=".NoticeActivity" />
-        <activity android:name=".ForgotPassword" />
-        <activity android:name=".DeshBoard" />
-        <activity android:name=".Login"/>
-        <activity android:name=".SplashActivity">
+        <activity
+            android:name=".ProfileScreen"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".LiveActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MediaActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".NoticeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ForgotPassword"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".DeshBoard"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Login"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SplashActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
