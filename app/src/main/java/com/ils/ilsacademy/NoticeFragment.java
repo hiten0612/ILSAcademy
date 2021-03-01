@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -12,18 +13,28 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.ils.ilsacademy.RecycleViewFragment.NoticeFragmentAdapter;
 import com.ils.ilsacademy.models.NoticeDataModel;
 
+import java.sql.Date;
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class NoticeFragment extends Fragment {
 
     private RecyclerView recyclerView;
     private NoticeFragmentAdapter noticeFragmentAdapter;
-
+private TextView date;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_notice, container, false);
+
+        date=view.findViewById(R.id.date);
+        String s;
+        String dt;
+        Date cal = (Date) Calendar.getInstance().getTime();
+        dt = cal.toLocaleString();
+        date.setText(dt.toString());
+
 
         recyclerView = view.findViewById(R.id.recycleView);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());

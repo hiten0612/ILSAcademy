@@ -14,11 +14,16 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.material.textfield.TextInputLayout;
 
+import java.sql.Date;
+import java.text.BreakIterator;
+import java.text.DateFormat;
+
 public class NoticeActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private TextInputLayout tilTitle, tilDescription;
     private EditText title, des;
     private Button submit;
+    private java.util.Date location;
 
 
     @Override
@@ -31,6 +36,7 @@ public class NoticeActivity extends AppCompatActivity {
         title = findViewById(R.id.title);
         des = findViewById(R.id.des);
         submit = findViewById(R.id.submit);
+
 
         toolbar = findViewById(R.id.toolbar);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {

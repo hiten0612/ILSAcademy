@@ -1,8 +1,5 @@
 package com.ils.ilsacademy;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
@@ -12,14 +9,17 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
 import com.google.android.material.textfield.TextInputLayout;
 
 public class LiveActivity extends AppCompatActivity {
 
-    private Toolbar etToolbar;
-    private TextInputLayout tilTit ,tilDes ,tilLink;
-    private EditText etTitle ,etDes,etLink;
     Button etSubmit;
+    private Toolbar etToolbar;
+    private TextInputLayout tilTit, tilDes, tilLink;
+    private EditText etTitle, etDes, etLink;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -114,7 +114,7 @@ public class LiveActivity extends AppCompatActivity {
         etSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                meeting(etTitle.getText().toString(), etDes.getText().toString(),etLink.getText().toString());
+                meeting(etTitle.getText().toString(), etDes.getText().toString(), etLink.getText().toString());
 
             }
 
@@ -122,7 +122,7 @@ public class LiveActivity extends AppCompatActivity {
 
     }
 
-    private void meeting(String title, String description ,String link) {
+    private void meeting(String title, String description, String link) {
         if (title.isEmpty()) {
             tilTit.setError("please enter title");
             return;
@@ -149,7 +149,7 @@ public class LiveActivity extends AppCompatActivity {
             startActivity(inte);
             finish();
 
-        }else {
+        } else {
             Toast.makeText(LiveActivity.this, "this is not valid title , description or link", Toast.LENGTH_SHORT).show();
         }
     }
