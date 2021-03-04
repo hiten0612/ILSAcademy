@@ -73,8 +73,8 @@ public class ProfileScreen extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(ProfileScreen.this, ContentActivity.class);
+                intent.putExtra("contentType","Terms");
                 startActivity(intent);
-                finish();
             }
         });
         about = findViewById(R.id.about);
@@ -82,8 +82,8 @@ public class ProfileScreen extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent ab = new Intent(ProfileScreen.this, ContentActivity.class);
+                ab.putExtra("contentType","About");
                 startActivity(ab);
-                finish();
             }
         });
         feed = findViewById(R.id.feed);

@@ -50,8 +50,8 @@
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/mtDes"
-                android:layout_width="wrap_content"
-                android:layout_height="144dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_gravity="start"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="5dp"
@@ -66,11 +66,11 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
                 android:layout_marginLeft="10dp"
-                android:text="https://meet.google.com"
                 android:layout_marginTop="3dp"
                 android:autoLink="all"
-                android:textColor="@color/blue"
                 android:fontFamily="@font/poppins"
+                android:text="https://meet.google.com"
+                android:textColor="@color/blue"
                 android:textSize="14sp"
                 android:textStyle="bold" />
         </LinearLayout>
