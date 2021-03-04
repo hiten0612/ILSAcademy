@@ -12,7 +12,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.ils.ilsacademy.R;
 import com.ils.ilsacademy.models.NoticeDataModel;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Locale;
 
 public class NoticeFragmentAdapter extends RecyclerView.Adapter<NoticeFragmentAdapter.ViewHolder> {
 
@@ -44,7 +47,10 @@ public class NoticeFragmentAdapter extends RecyclerView.Adapter<NoticeFragmentAd
         NoticeDataModel noticeDataModel = noticeDataModelArrayList.get(position);
         holder.title.setText(noticeDataModel.getTitle());
 //        holder.des.setText(noticeDataModel.getDescription());
-
+        Calendar calendar = Calendar.getInstance();
+        SimpleDateFormat sdf = new SimpleDateFormat("MMM,dd yyyy hh:mm a", Locale.getDefault());
+        String date = sdf.format(calendar.getTime());
+        holder.date.setText(date);
     }
 
 
@@ -58,12 +64,14 @@ public class NoticeFragmentAdapter extends RecyclerView.Adapter<NoticeFragmentAd
 
         TextView title;
         TextView des;
+        TextView date;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             title = itemView.findViewById(R.id.title);
             des = itemView.findViewById(R.id.des);
+            date = itemView.findViewById(R.id.date);
         }
     }
 }

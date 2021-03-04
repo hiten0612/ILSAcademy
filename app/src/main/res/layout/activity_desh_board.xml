@@ -42,6 +42,9 @@
                     android:layout_height="40dp"
                     android:layout_gravity="end|center_vertical"
                     android:layout_marginRight="15dp"
+                    android:background="?attr/actionBarItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
                     android:padding="5dp"
                     android:rotation="3"
                     app:srcCompat="@drawable/ic_profile_logo" />

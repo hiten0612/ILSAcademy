@@ -24,12 +24,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/title"
@@ -42,17 +36,17 @@
                 android:textColor="@color/red"
                 android:textSize="16sp" />
 
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/date"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="end"
-                    android:layout_marginLeft="100dp"
-                    android:fontFamily="@font/poppins_bold"
-                    android:text="date"
-                    android:textColor="@color/red"
-                    android:textSize="16sp" />
-            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginLeft="10dp"
+                android:fontFamily="@font/poppins"
+                android:text="03/02/2021 07:01 PM"
+                android:textColor="@color/gray"
+                android:textSize="10sp" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/des"

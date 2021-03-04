@@ -4,14 +4,21 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageView;
+
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import com.ils.ilsacademy.utils.ContentActivity;
+
+
 public class ProfileScreen extends AppCompatActivity {
     private Toolbar pfToolbar;
-    private Button pfLogOut;
+    private ImageView pfLogOut;
+    private ImageView terms;
+    private ImageView about;
+    private ImageView feed;
     private SharedPreferenceConfig sharedPreferenceConfig;
 
     @Override
@@ -63,5 +70,34 @@ public class ProfileScreen extends AppCompatActivity {
                 alert11.show();
             }
         });
+        terms = findViewById(R.id.terms);
+        terms.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ProfileScreen.this, ContentActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+        about = findViewById(R.id.about);
+        about.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent ab = new Intent(ProfileScreen.this, ContentActivity.class);
+                startActivity(ab);
+                finish();
+            }
+        });
+        feed = findViewById(R.id.feed);
+        feed.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent feedback = new Intent(ProfileScreen.this,FeedBack_Activity.class);
+                startActivity(feedback);
+                finish();
+            }
+        });
+
+
     }
 }

@@ -16,7 +16,7 @@ import com.google.android.material.textfield.TextInputLayout;
 
 public class LiveActivity extends AppCompatActivity {
 
-    Button etSubmit;
+    Button liveSubmit;
     private Toolbar etToolbar;
     private TextInputLayout tilTit, tilDes, tilLink;
     private EditText etTitle, etDes, etLink;
@@ -32,7 +32,7 @@ public class LiveActivity extends AppCompatActivity {
         etTitle = findViewById(R.id.etTitle);
         etDes = findViewById(R.id.etDes);
         etLink = findViewById(R.id.etLink);
-        etSubmit = findViewById(R.id.etSubmit);
+        liveSubmit = findViewById(R.id.liveSubmit);
 
         etToolbar = findViewById(R.id.etToolbar);
         etToolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -111,18 +111,19 @@ public class LiveActivity extends AppCompatActivity {
         });
 
 
-        etSubmit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                meeting(etTitle.getText().toString(), etDes.getText().toString(), etLink.getText().toString());
+        liveSubmit.setOnClickListener(new View.OnClickListener() {
+          @Override
+          public void onClick(View view) {
+              meet(etTitle.getText().toString(),etDes.getText().toString(),etLink.getText().toString());
 
-            }
-
-        });
+          }
+      });
 
     }
 
-    private void meeting(String title, String description, String link) {
+
+
+    private void meet(String title, String description, String link) {
         if (title.isEmpty()) {
             tilTit.setError("please enter title");
             return;
@@ -144,7 +145,7 @@ public class LiveActivity extends AppCompatActivity {
             tilLink.setError("");
         }
 
-        if (title.equals("sunday") && description.equals("holiday") && link.equals("link")) {
+        if (title.equals("no") && description.equals("leacture") && link.equals("today")) {
             Intent inte = new Intent(LiveActivity.this, DeshBoard.class);
             startActivity(inte);
             finish();

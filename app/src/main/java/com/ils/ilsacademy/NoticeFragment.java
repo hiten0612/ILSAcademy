@@ -21,19 +21,14 @@ public class NoticeFragment extends Fragment {
 
     private RecyclerView recyclerView;
     private NoticeFragmentAdapter noticeFragmentAdapter;
-private TextView date;
+
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_notice, container, false);
 
-        date=view.findViewById(R.id.date);
-        String s;
-        String dt;
-        Date cal = (Date) Calendar.getInstance().getTime();
-        dt = cal.toLocaleString();
-        date.setText(dt.toString());
+
 
 
         recyclerView = view.findViewById(R.id.recycleView);
