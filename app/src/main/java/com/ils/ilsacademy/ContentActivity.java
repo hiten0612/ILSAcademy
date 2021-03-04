@@ -1,13 +1,11 @@
-package com.ils.ilsacademy.utils;
+package com.ils.ilsacademy;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-
-import com.ils.ilsacademy.R;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 public class ContentActivity extends AppCompatActivity {
 
@@ -22,6 +20,8 @@ public class ContentActivity extends AppCompatActivity {
         cnToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent(ContentActivity.this, ProfileScreen.class);
+                startActivity(intent);
                 finish();
             }
         });
