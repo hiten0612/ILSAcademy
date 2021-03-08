@@ -43,8 +43,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_medium"
                 android:hint="Username"
-                android:inputType="text"
-                android:text="Admin" />
+                android:inputType="text" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -63,10 +62,16 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_medium"
                 android:hint="Password"
-                android:inputType="textPassword"
-                android:text="12345" />
+                android:inputType="textPassword" />
 
         </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/chkRemember"
+            android:layout_width="match_parent"
+            android:text="Remember me"
+            android:fontFamily="@font/poppins"
+            android:layout_height="wrap_content"/>
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/login"

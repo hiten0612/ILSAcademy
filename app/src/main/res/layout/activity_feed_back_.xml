@@ -39,7 +39,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_feedback" />
+                app:srcCompat="@drawable/ic_chat" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/txt"
@@ -69,7 +69,7 @@
                 tools:layout_editor_absoluteX="16dp">
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/tilTitle"
+                    android:id="@+id/filTitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -77,13 +77,15 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/title"
+                        android:id="@+id/fdTitle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@color/white"
                         android:fontFamily="@font/poppins_medium"
+                        android:gravity="start"
                         android:hint="Enter Your Feedback"
                         android:inputType="textMultiLine"
+                        android:lines="4"
                         android:paddingStart="0dp"
                         android:paddingEnd="0dp"
                         android:textColor="@color/inputTextColor" />
@@ -94,6 +96,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/fdSubmit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"

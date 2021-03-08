@@ -22,7 +22,7 @@ public class ContentActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(ContentActivity.this, ProfileScreen.class);
                 startActivity(intent);
-                finish();
+
             }
         });
 

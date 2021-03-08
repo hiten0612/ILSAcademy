@@ -36,6 +36,9 @@ public class Login extends AppCompatActivity {
         tilPassword = findViewById(R.id.tilPassword);
         sharedPreferenceConfig = new SharedPreferenceConfig(getApplicationContext());
 
+        user.setText(sharedPreferenceConfig.getUserName());
+        pass.setText(sharedPreferenceConfig.getPassword());
+
         user.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -120,6 +123,7 @@ public class Login extends AppCompatActivity {
             Intent intent = new Intent(this, DeshBoard.class);
             startActivity(intent);
             sharedPreferenceConfig.setLoginStatus(true);
+            sharedPreferenceConfig.saveUserData(username, password);
             finish();
         } else {
             Toast.makeText(Login.this, "incorret usename or password", Toast.LENGTH_SHORT).show();
