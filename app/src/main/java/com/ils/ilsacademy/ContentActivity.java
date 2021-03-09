@@ -1,6 +1,5 @@
 package com.ils.ilsacademy;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -17,14 +16,8 @@ public class ContentActivity extends AppCompatActivity {
         setContentView(R.layout.activity_content);
 
         cnToolbar = findViewById(R.id.cnToolbar);
-        cnToolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(ContentActivity.this, ProfileScreen.class);
-                startActivity(intent);
-
-            }
+        cnToolbar.setNavigationOnClickListener(view -> {
+            finish();
         });
-
     }
 }
