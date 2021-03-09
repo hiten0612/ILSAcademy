@@ -4,13 +4,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatCheckBox;
 
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -20,6 +20,7 @@ public class Login extends AppCompatActivity {
     private EditText pass;
     private Button login;
     private TextView click;
+    private AppCompatCheckBox chkRemember;
     private TextInputLayout tilUserName, tilPassword;
     private SharedPreferenceConfig sharedPreferenceConfig;
 
@@ -34,10 +35,19 @@ public class Login extends AppCompatActivity {
         click = findViewById(R.id.click);
         tilUserName = findViewById(R.id.tilUserName);
         tilPassword = findViewById(R.id.tilPassword);
-        sharedPreferenceConfig = new SharedPreferenceConfig(getApplicationContext());
+        chkRemember = findViewById(R.id.chkRemember);
+
+        sharedPreferenceConfig = new SharedPreferenceConfig(Login.this);
 
         user.setText(sharedPreferenceConfig.getUserName());
         pass.setText(sharedPreferenceConfig.getPassword());
+
+//        if(sharedPreferenceConfig.getUserName().isEmpty()){
+//           chkRemember.setChecked(false);
+//        }else{
+//            chkRemember.setChecked(true);
+//        }
+        chkRemember.setChecked(!sharedPreferenceConfig.getUserName().isEmpty());
 
         user.addTextChangedListener(new TextWatcher() {
             @Override
@@ -84,22 +94,11 @@ public class Login extends AppCompatActivity {
 
             }
         });
-        login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        login.setOnClickListener(view -> validate(user.getText().toString().trim(), pass.getText().toString().trim()));
 
-                validate(user.getText().toString(), pass.getText().toString());
-            }
-
-        });
-
-        click.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Login.this, ForgotPassword.class);
-                startActivity(intent);
-            }
+        click.setOnClickListener(view -> {
+            Intent intent = new Intent(Login.this, ForgotPassword.class);
+            startActivity(intent);
         });
     }
 
@@ -120,10 +119,14 @@ public class Login extends AppCompatActivity {
         }
 
         if (username.equals("Admin") && password.equals("12345")) {
+            sharedPreferenceConfig.setLoginStatus(true);
+            if (chkRemember.isChecked()) {
+                sharedPreferenceConfig.saveUserData(username, password);
+            } else {
+                sharedPreferenceConfig.saveUserData("", "");
+            }
             Intent intent = new Intent(this, DeshBoard.class);
             startActivity(intent);
-            sharedPreferenceConfig.setLoginStatus(true);
-            sharedPreferenceConfig.saveUserData(username, password);
             finish();
         } else {
             Toast.makeText(Login.this, "incorret usename or password", Toast.LENGTH_SHORT).show();

@@ -14,17 +14,17 @@ public class SharedPreferenceConfig {
         sharedPreferences = context.getSharedPreferences(context.getResources().getString(R.string.login_shared_preference), Context.MODE_PRIVATE);
     }
 
+    public boolean getLoginStatus() {
+        return sharedPreferences.getBoolean("isLoggedIn", false);
+    }
+
     public void setLoginStatus(boolean status) {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putBoolean("isLoggedIn", status);
         editor.apply();
     }
 
-    public boolean getLoginStatus() {
-        return sharedPreferences.getBoolean("isLoggedIn", false);
-    }
-
-    public void saveUserData(String username,String password) {
+    public void saveUserData(String username, String password) {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString("username", username);
         editor.putString("password", password);
@@ -40,9 +40,14 @@ public class SharedPreferenceConfig {
     }
 
     @SuppressLint("CommitPrefEdits")
-    public void clearData(){
+    public void clearData() {
+        String username = getUserName();
+        String password = getPassword();
+
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.clear();
         editor.apply();
+
+        saveUserData(username, password);
     }
 }
