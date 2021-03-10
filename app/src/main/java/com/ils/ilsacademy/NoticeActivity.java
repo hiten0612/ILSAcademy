@@ -14,10 +14,6 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.material.textfield.TextInputLayout;
 
-import java.sql.Date;
-import java.text.BreakIterator;
-import java.text.DateFormat;
-
 public class NoticeActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private TextInputLayout tilTitle, tilDescription;
@@ -96,37 +92,35 @@ public class NoticeActivity extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                valid(title.getText().toString(), des.getText().toString());
-
+                valid();
             }
-
         });
 
     }
 
-    private void valid(String title, String description) {
-        if (title.isEmpty()) {
+    private void valid() {
+        String strTitle = title.getText().toString().trim();
+        String strDesc = des.getText().toString().trim();
+        if (strTitle.isEmpty()) {
             tilTitle.setError("please enter title");
             return;
         } else {
             tilTitle.setError("");
         }
 
-        if (description.isEmpty()) {
+        if (strDesc.isEmpty()) {
             tilDescription.setError("please enter description");
             return;
         } else {
             tilDescription.setError("");
         }
 
-        if (title.equals("holiday") && description.equals("sunday means holiday")) {
-            Intent intent = new Intent(NoticeActivity.this, DeshBoard.class);
-            startActivity(intent);
-            finish();
-
-
-        } else {
-            Toast.makeText(NoticeActivity.this, "this is not valid title or description", Toast.LENGTH_SHORT).show();
-        }
+//        if (title.equals("holiday") && strDesc.equals("sunday means holiday")) {
+//            Intent intent = new Intent(NoticeActivity.this, DeshBoard.class);
+//            startActivity(intent);
+//            finish();
+//        } else {
+//            Toast.makeText(NoticeActivity.this, "this is not valid title or description", Toast.LENGTH_SHORT).show();
+//        }
     }
 }

@@ -150,19 +150,20 @@
                     android:orientation="horizontal">
 
                     <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imgFileIcon"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         app:srcCompat="@drawable/ic_pdf" />
 
                     <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/mdPdf"
+                        android:id="@+id/txtFileName"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_gravity="start"
                         android:layout_weight="1"
                         android:maxLines="2"
                         android:padding="10dp"
-                        android:text="Sample.pdf"
+                        android:text="Browse File..."
                         android:textColor="@color/black"
                         android:textSize="16sp"
                         android:textStyle="bold" />
