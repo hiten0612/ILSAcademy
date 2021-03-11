@@ -144,23 +144,23 @@ public class MediaActivity extends AppCompatActivity {
                         txtFileName.setText(file.getName());
                         String extension = file.getAbsolutePath().substring(file.getAbsolutePath().lastIndexOf("."));
                         switch (extension) {
-                            case "pdf":
+                            case ".pdf":
                                 imgFileIcon.setImageResource(R.drawable.ic_pdf);
                                 break;
-                            case "png":
-                            case "jpg":
-                            case "jpeg":
+                            case ".png":
+                            case ".jpg":
+                            case ".jpeg":
                                 imgFileIcon.setImageResource(R.drawable.ic_gallery);
                                 break;
-                            case "mp4":
+                            case ".mp4":
                                 imgFileIcon.setImageResource(R.drawable.ic_audio);
                                 break;
-                            case "doc":
-                            case "docx":
+                            case ".doc":
+                            case ".docx":
                                 imgFileIcon.setImageResource(R.drawable.ic_docx);
                                 break;
-                            case "ppt":
-                            case "pptx":
+                            case ".ppt":
+                            case ".pptx":
                                 imgFileIcon.setImageResource(R.drawable.ic_ppt);
                                 break;
                         }
