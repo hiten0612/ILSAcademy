@@ -5,6 +5,8 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -54,6 +56,56 @@ public class MediaActivity extends AppCompatActivity {
         imgFileIcon = findViewById(R.id.imgFileIcon);
 
         mdToolbar = findViewById(R.id.mdToolbar);
+
+        mdSubmit.setOnClickListener(view -> {
+            init();
+        });
+
+
+        mdTitle.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if (charSequence.toString().isEmpty()) {
+                    tilTitle.setError("please enter Title");
+                } else {
+                    tilTitle.setError("");
+                }
+
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+
+        mdDes.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if (charSequence.toString().isEmpty()) {
+                    tilDescription.setError("please enter Description");
+                } else {
+                    tilDescription.setError("");
+                }
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
         mdToolbar.setNavigationOnClickListener(view -> finish());
 
         mdUpload = findViewById(R.id.mdUpload);
@@ -138,5 +190,23 @@ public class MediaActivity extends AppCompatActivity {
                 Toast.makeText(MediaActivity.this, "Permissions not granted by the user.", Toast.LENGTH_SHORT).show();
             }
         }
+    }
+
+    private void init() {
+        String sTitle = mdTitle.getText().toString().trim();
+        String sDes = mdDes.getText().toString().trim();
+
+        if (sTitle.isEmpty()) {
+            tilTitle.setError("please enter Title");
+        } else {
+            tilTitle.setError("");
+        }
+
+        if (sDes.isEmpty()) {
+            tilDescription.setError("please enter Description");
+        } else {
+            tilDescription.setError("");
+        }
+
     }
 }
