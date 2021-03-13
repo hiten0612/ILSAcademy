@@ -72,6 +72,7 @@ public class MediaActivity extends AppCompatActivity {
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 if (charSequence.toString().isEmpty()) {
                     tilTitle.setError("please enter Title");
+                    return;
                 } else {
                     tilTitle.setError("");
                 }
@@ -95,6 +96,7 @@ public class MediaActivity extends AppCompatActivity {
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 if (charSequence.toString().isEmpty()) {
                     tilDescription.setError("please enter Description");
+                    return;
                 } else {
                     tilDescription.setError("");
                 }
@@ -206,6 +208,9 @@ public class MediaActivity extends AppCompatActivity {
             tilDescription.setError("please enter Description");
         } else {
             tilDescription.setError("");
+        }
+        if (file == null || !file.exists()) {
+            Toast.makeText(MediaActivity.this, "please select file", Toast.LENGTH_SHORT).show();
         }
 
     }
