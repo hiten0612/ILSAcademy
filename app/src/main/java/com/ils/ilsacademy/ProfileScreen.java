@@ -92,7 +92,6 @@ public class ProfileScreen extends AppCompatActivity {
             public void onClick(View view) {
                 Intent feedback = new Intent(ProfileScreen.this,FeedBack_Activity.class);
                 startActivity(feedback);
-                finish();
             }
         });
 

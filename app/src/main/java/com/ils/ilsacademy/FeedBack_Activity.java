@@ -30,8 +30,7 @@ public class FeedBack_Activity extends AppCompatActivity {
         fdToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(FeedBack_Activity.this, ProfileScreen.class);
-                startActivity(intent);
+                finish();
 
             }
         });
